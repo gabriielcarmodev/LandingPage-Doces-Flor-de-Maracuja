@@ -62,6 +62,7 @@ a.btn{
     gap: 12px;
     align-items: center;
     min-height: calc(100vh - 96px); /* ocupa a tela toda, descontando a altura do header */
+    padding: 32px 4%;
     padding-top: clamp(0px, 5vw, 32px); /* espaçamento flexível que se ajusta ao tamanho da tela */
 
     .home-image{
