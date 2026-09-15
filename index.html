@@ -8,7 +8,7 @@
     <title>Doces Flor de Maracujá</title>
 </head>
 <body>
-    <!-- HEADER-->
+   <!-- HEADER-->
     <header>
         <nav class="navbar">
          <img src="src/images/logo-docesflor-demaracuja.PNG" 
@@ -16,12 +16,13 @@
          class="logo"
          >
 
+         <!-- botão hambúrguer, só aparece no mobile (escondido via CSS acima de 769px) -->
          <button class="btn btn-mobile">
-            <i class="fa-solid fa-bars"></i>
+            <i class="fa-solid fa-bars"></i> <!-- ícone inicial: hambúrguer (menu fechado) -->
          </button>
 
-
-          <ul id="nav-links" class="show">
+         <!-- lista de links do menu. SEM classe "show" -> começa escondida no mobile (ver navbar.css) -->
+          <ul id="nav-links">
             <li>
                 <a href="#home">Home</a>
             </li>
@@ -36,16 +37,16 @@
             </li>
           </ul>
 
+          <!-- botão de contato via WhatsApp (link com mensagem pré-preenchida na URL) -->
           <a href="https://wa.me/5581998300838?text=Ol%C3%A1!%20Gostaria%20de%20tirar%20uma%20d%C3%BAvida%20sobre%20a%20Doces%20Flor%20de%20Maracuj%C3%A1%E2%98%BA%EF%B8%8F" 
           class="btn btn-default">
           Contatar
           </a>
 
-
         </nav>
     </header>
 
-    <!--MAIN-->
+   <!--MAIN-->
     <main id="container">
         <!-- HOME -->
          <section id="home">
@@ -54,7 +55,7 @@
             class="home-image">
             <h1 class="home-title">
             Cuidando de cada detalhe, 
-            <span> do TOPO ao RECHEIO.</span>
+            <span> do TOPO ao RECHEIO.</span> <!-- span separado para aplicar cor diferente via CSS -->
             </h1>
             <p class="home-description">
                 Descubra bolos icônicos, sentimentos mágicos
@@ -70,9 +71,8 @@
                 </a>
             </div>
 
-
          </section>
     </main>
-    <script src="src/js/script.js"></script>
+    <script src="src/js/script.js"></script> <!-- carregado no fim do body para não bloquear a renderização da página -->
 </body>
 </html> 

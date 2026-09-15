@@ -1,38 +1,33 @@
 header{
     background-color: var(--color-neutral-1);
     padding: 12px 4%;
-    position: sticky;
+    position: sticky; /* mantém o header fixo no topo ao rolar a página */
     top: 0;
-    z-index: 1;
+    z-index: 1; /* garante que o header fique acima do conteúdo ao rolar */
 
     .navbar{
         display: flex;
-        justify-content: space-between;
+        justify-content: space-between; /* logo, botão e menu distribuídos nas pontas */
         align-items: center;
-        
-
-        
 
         .logo{
-            width: 180px;
-            
+            width: 90px;
         }
 
         ul{
-            display: none;
+            display: none; /* estado padrão (mobile): menu escondido */
             list-style: none;
-            flex-direction: column;
+            flex-direction: column; /* itens empilhados quando o menu abrir */
             gap: 0.5rem;
             width: 100%;
-            position: absolute;
-            top: 100%;
+            position: absolute; /* sai do fluxo normal, "flutua" sobre o conteúdo abaixo */
+            top: 100%; /* posiciona logo abaixo do header */
             background-color: var(--color-neutral-1);
             left: 0;
             padding: 1rem;
 
-
             &.show{
-               display: flex;
+               display: flex; /* classe adicionada pelo JS ao clicar no botão -> exibe o menu */
             }
 
             li{
@@ -43,7 +38,7 @@ header{
                     text-decoration: none;
                     font-size: 1rem;
                     font-weight: 500;
-                    transition: all 0.3s ease;
+                    transition: all 0.3s ease; /* suaviza a mudança de cor/borda no hover */
 
                     &:hover{
                         color: var(--color-primary-1);
@@ -54,29 +49,34 @@ header{
         }
 
         .btn-default{
-            display: none;
+            display: none; /* botão "Contatar" fica escondido no mobile (menu hambúrguer assume esse papel) */
         }
 
     }
 }
 
+/* a partir de 769px (tablets/desktop), o layout muda para o modo "linha" */
 @media(min-width: 769px){
     header{
         .navbar{
             .btn-mobile{
-                display: none;
+                display: none; /* esconde o botão hambúrguer, pois o menu já fica visível */
             }
             ul{
-                display: flex;
-                flex-direction: row;
-                position: static;
+                display: flex; /* menu sempre visível em telas maiores */
+                flex-direction: row; /* itens lado a lado */
+                position: static; /* volta ao fluxo normal (não precisa mais "flutuar") */
                 gap: 1rem;
                 width: auto;
                 padding: 0;
             }
 
             .btn-default{
-                display: block;
+                display: block; /* mostra o botão "Contatar" novamente */
+            }
+
+            .logo{
+                width: 140px; /* logo maior a partir do desktop */
             }
         }
     }

@@ -1,16 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-@import url('../css/variables.css');
-@import url('../css/navbar.css');
+@import url('../css/variables.css'); /* importa as cores para uso neste arquivo */
+@import url('../css/navbar.css'); /* importa os estilos do header/menu */
 
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin: 0; /* reset: remove margem padrão do navegador */
+    padding: 0; /* reset: remove padding padrão do navegador */
+    box-sizing: border-box; /* padding e border passam a contar dentro da largura/altura definidas */
     font-family: 'Poppins', sans-serif;
 }
 
 a.btn{
-    text-decoration: none;
+    text-decoration: none; /* remove sublinhado dos links usados como botão */
 }
 
 .btn{
@@ -21,12 +21,18 @@ a.btn{
     font-size: 1rem;
     font-weight: 600;
     background-color: transparent;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease; /* suaviza a troca de cor no hover */
 
 }
 
+#container{
+    background-image: url('../images/Bg_mobiledocesflor.png');
+    background-size: contain;
+    height: 400vh; /* altura fixa da página (ajustar conforme o conteúdo real do site) */
+}
+
 .btn-mobile{
-    font-size: 1.5rem;
+    font-size: 1.5rem; /* aumenta o tamanho do ícone do hambúrguer */
 }
 
 .btn-default{
@@ -38,6 +44,55 @@ a.btn{
     }
 }
 
+.btn-outlined{
+    background-color: transparent;
+    color: var(--color-primary-1);
+    border: 2px solid var(--color-primary-1);
+
+    &:hover{
+        background-color: var(--color-primary-1);
+        color: var(--color-neutral-0);
+    }
+}
 
 
+#home{
+    display: flex;
+    flex-direction: column; /* imagem, título, texto e botões empilhados no mobile */
+    gap: 12px;
+    align-items: center;
+    min-height: calc(100vh - 96px); /* ocupa a tela toda, descontando a altura do header */
+    padding-top: clamp(0px, 5vw, 32px); /* espaçamento flexível que se ajusta ao tamanho da tela */
 
+    .home-image{
+        width: clamp(300px, 50%, 400px); /* largura flexível: nunca menor que 300px nem maior que 400px */
+    }
+
+    .home-title{
+        color: var(--color-neutral-8);
+        text-align: center;
+        font-size: clamp(3rem, 5vw, 4.3rem); /* corrigido: "5vw" (era "5v2", unidade inválida) */
+        text-transform: uppercase;
+        line-height: 1.2;
+        max-width: 700px;
+
+        span{
+            color: var(--color-primary-1); /* destaca a segunda parte do título na cor da marca */
+        }
+    }
+
+    .home-description{
+        color: var(--color-neutral-9);
+        text-align: center;
+        font-size: 1rem;
+        font-weight: 500;
+        max-width: 600px;
+    }
+
+    .home-actions{
+        display: flex;
+        gap: 12px;
+        margin-top: 12px;
+
+    }
+}
